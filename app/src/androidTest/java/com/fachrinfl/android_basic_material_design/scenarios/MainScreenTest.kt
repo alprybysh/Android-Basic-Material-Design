@@ -9,11 +9,10 @@ import android.view.MenuItem
 import com.fachrinfl.android_basic_material_design.MainActivity
 import com.fachrinfl.android_basic_material_design.R
 import com.fachrinfl.android_basic_material_design.screens.KakaoMainScreen
-import org.hamcrest.Matchers.hasSize
+
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.regex.Matcher
 
 @RunWith(AndroidJUnit4::class)
 class MainScreenTest {
@@ -23,8 +22,6 @@ class MainScreenTest {
     val testRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
     private val kakaoMainScreen = KakaoMainScreen()
-
-
 
     @Test
     fun verifyBottomNavigationViewRecents(){
@@ -39,9 +36,6 @@ class MainScreenTest {
                 hasText("Favorite")
             }
         }
-
     }
-
-
 }
 
