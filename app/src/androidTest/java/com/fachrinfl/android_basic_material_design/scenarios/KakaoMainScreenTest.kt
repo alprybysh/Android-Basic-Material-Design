@@ -3,8 +3,11 @@ package com.fachrinfl.android_basic_material_design.scenarios
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import android.support.v4.content.res.ResourcesCompat
+import android.widget.ImageView
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.fachrinfl.android_basic_material_design.MainActivity
+import com.fachrinfl.android_basic_material_design.R
 import com.fachrinfl.android_basic_material_design.screens.KakaoMainScreen
 import org.junit.Rule
 import org.junit.Test
@@ -18,6 +21,9 @@ class KakaoMainScreenTest {
     @Rule
     val testRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
+    val appContext get() = testRule.activity.applicationContext
+
+
     @Test
     fun testContentItemsRecyclerView() {
 
@@ -30,6 +36,15 @@ class KakaoMainScreenTest {
                     isVisible()
                     title { hasText("Fachri Naufal") }
                     email { hasText("fachrinaufal@example.com") }
+                    image{
+                        val drawable = ResourcesCompat.getDrawable(
+                                appContext.resources,
+                                R.drawable.profile,
+                                null
+                        )
+
+                        hasDrawable(drawable!!)
+                    }
                 }
 
 
