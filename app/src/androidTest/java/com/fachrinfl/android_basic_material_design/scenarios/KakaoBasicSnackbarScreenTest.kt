@@ -5,7 +5,7 @@ import android.support.test.runner.AndroidJUnit4
 import com.agoda.kakao.screen.Screen.Companion.idle
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.fachrinfl.android_basic_material_design.BasicSnackbar
-import com.fachrinfl.android_basic_material_design.screens.KakaoMainScreen
+import com.fachrinfl.android_basic_material_design.screens.KakaoBasicSnackbarScreen
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,28 +21,27 @@ class KakaoBasicSnackbarScreenTest {
 
     @Test
     fun verifyBasicOneSnackBar() {
-        onScreen<KakaoMainScreen> {
+        onScreen<KakaoBasicSnackbarScreen> {
             oneBasicButton {
                 isDisplayed()
                 click()
             }
             snackBar.text.hasText("Basic one snackbar material design")
             idle(3000)
-            snackBar.isGone()
-
+            snackBar.doesNotExist()
         }
     }
 
     @Test
     fun verifyBasicTwoSnackBar() {
-        onScreen<KakaoMainScreen> {
+        onScreen<KakaoBasicSnackbarScreen> {
             twoBasicButton {
                 isDisplayed()
                 click()
             }
             snackBar.text.hasText("Basic two snackbar material design")
             idle(3000)
-            snackBar.isGone()
+            snackBar.isDisplayed()
         }
     }
 

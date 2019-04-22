@@ -5,7 +5,7 @@ import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KSnackbar
 import com.fachrinfl.android_basic_material_design.R
 
-class KakaoMainScreen : Screen<KakaoMainScreen> (){
+class KakaoBasicSnackbarScreen : Screen<KakaoBasicSnackbarScreen> (){
 
     val oneBasicButton: KButton = KButton() {withId(R.id.basicOne)}
 
