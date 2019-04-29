@@ -11,7 +11,6 @@ Benefits of using Kakao:
 * Reusability
 * Extensible DSL
 
-
 ## How to use it
 ### Create Screen
 Create your entity Screen where you will add the views involved in the interactions of the tests:
